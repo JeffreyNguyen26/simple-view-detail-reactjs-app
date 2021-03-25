@@ -41,7 +41,7 @@ jobs:
             - ~/.cache
           key: v1-dependencies-{{ checksum "package.json" }}
       - store_artifacts:
-          path: src/BuildResult
+          path: repo/BuildResult
           destination: BuildResult
 
 workflows:
