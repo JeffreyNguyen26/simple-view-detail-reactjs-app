@@ -41,10 +41,13 @@ jobs:
             - ~/.cache
           key: v1-dependencies-{{ checksum "package.json" }}
       - store_artifacts:
-          path: |
-            - node_modules
-            - .npm
-            - .cache
+          path: node_modules
+          destination: BuildResult
+      - store_artifacts:
+          path: .npm
+          destination: BuildResult
+      - store_artifacts:
+          path: .cache
           destination: BuildResult
 
 workflows:
