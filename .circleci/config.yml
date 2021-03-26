@@ -48,6 +48,7 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
+            git clone https://thangnldse62897:nguyenleduythang@git.heroku.com/simple-view-detail-reactjs-app.git
             git push https://heroku:58b7661a-6f18-4d28-8853-096cd5da7138@git.heroku.com/simple-view-detail-reactjs-app.git main
 
 
