@@ -45,16 +45,16 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      # - run: |-
-      #     cat >> ~/.netrc \<<EOF
-      #       machine api.heroku.com
-      #         login thangnldse62897@fpt.edu.vn
-      #         password Th@ng26121998
-      #       machine git.heroku.com
-      #         login thangnldse62897@fpt.edu.vn
-      #         password Th@ng26121998
-      #     EOF
-      # - run: chmod 600 ~/.netrc 
+      - run: |-
+          cat >> ~/.netrc \<<EOF
+            machine api.heroku.com
+              login thangnldse62897@fpt.edu.vn
+              password Th@ng26121998
+            machine git.heroku.com
+              login thangnldse62897@fpt.edu.vn
+              password Th@ng26121998
+          EOF
+      - run: chmod 600 ~/.netrc 
 
  
       - run:
