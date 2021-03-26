@@ -46,13 +46,16 @@ jobs:
     steps:
       - checkout
       - run:
+          name: login Heroku
+          command: heroku login -u thangnldse62897 -p Th@ng26121998
+ 
+      - run:
           name: Clone from Heroku
           command: git clone https://thangnldse62897:Th@ng26121998@git.heroku.com/simple-view-detail-reactjs-app.git
 
       - run:
           name: Deploy Master to Heroku
           command: git push https://heroku:58b7661a-6f18-4d28-8853-096cd5da7138@git.heroku.com/simple-view-detail-reactjs-app.git main
-
 
 workflows:
   version: 2.1
