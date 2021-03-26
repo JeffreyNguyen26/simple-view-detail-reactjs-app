@@ -55,9 +55,9 @@ jobs:
               password Th@ng26121998
           EOF
       - run: chmod 600 ~/.netrc 
-      - run: heroku git:remote -a your_app
+      - run: heroku git:remote -a simple-view-detail-reactjs-app
       - run: git push heroku master:master -f
-      - run: heroku run rails db:migrate --app your_app
+      - run: heroku run rails db:migrate --app simple-view-detail-reactjs-app
  
       # - run:
       #     name: Clone from Heroku
