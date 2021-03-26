@@ -56,7 +56,6 @@ jobs:
           EOF
       - run: chmod 600 ~/.netrc 
 
- 
       - run:
           name: Clone from Heroku
           command: git clone https://heroku:58b7661a-6f18-4d28-8853-096cd5da7138@git.heroku.com/simple-view-detail-reactjs-app.git main
