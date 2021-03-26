@@ -57,12 +57,10 @@ jobs:
       # - run: chmod 600 ~/.netrc 
 
       - run:
-          name: Auth
-          command: git config --global user.email "thangnldse62897@fpt.edu.vn"
-
-      - run:
           name: Pull from Heroku
-          command: git pull https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
+          command: |
+            git config --global user.email "thangnldse62897@fpt.edu.vn"
+            git pull https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
             
       - run:
           name: Deploy Master to Heroku
