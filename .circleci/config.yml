@@ -63,7 +63,7 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
-            git fetch origin-push
+            git fetch main
             git push https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
 
 workflows:
