@@ -61,7 +61,12 @@ jobs:
       #     command: |
       #       git config --global user.email "thangnldse62897@fpt.edu.vn"
       #       git pull https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
-            
+      - run:
+          name: Install Heroku
+          command: |
+            rm /usr/local/bin/heroku
+            rm -rf /usr/local/lib/heroku /usr/local/heroku
+            rm -rf ~/.local/share/heroku ~/.cache/heroku
       - run:
           name: Deploy Master to Heroku
           command: | 
