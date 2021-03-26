@@ -62,18 +62,11 @@ jobs:
       #       git config --global user.email "thangnldse62897@fpt.edu.vn"
       #       git pull https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
       - run:
-          name: Install Heroku
-          command: |
-            sudo mkdir -p /usr/local/lib /usr/local/bin
-            sudo tar -xvzf heroku-linux-amd64.tar.gz -C /usr/local/lib
-            sudo ln -s /usr/local/lib/heroku/bin/heroku /usr/local/bin/heroku
-      - run:
           name: Deploy Master to Heroku
           command: | 
-            heroku git:clone -a simple-view-detail-reactjs-app
-            git add .
-            git commit -am "make it better"
-            git push heroku master
+            heroku create
+            git push heroku main
+            heroku open
             git push origin https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
 
 workflows:
