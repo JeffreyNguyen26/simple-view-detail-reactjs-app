@@ -46,8 +46,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: login Heroku
-          command: heroku login -u thangnldse62897 -p Th@ng26121998
+          name: login Heroku 
+          command: |
+            heroku login -i
+            Email: "thangnldse62897@fpt.edu.vn"
+            Password: "Th@ng26121998"
  
       - run:
           name: Clone from Heroku
