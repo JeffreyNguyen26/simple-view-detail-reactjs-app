@@ -65,6 +65,7 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: | 
+            heroku git:clone -a simple-view-detail-reactjs-app
             git add .
             git commit -am "make it better"
             git push heroku master
