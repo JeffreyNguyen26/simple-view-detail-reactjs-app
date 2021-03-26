@@ -58,9 +58,8 @@ jobs:
       #     command: git push https://heroku:58b7661a-6f18-4d28-8853-096cd5da7138@git.heroku.com/simple-view-detail-reactjs-app.git master
 
       - run: |
-          docker login -username=thangnldse62897@fpt.edu.vn --password=58b7661a-6f18-4d28-8853-096cd5da7138 registry.heroku.com 
-          docker tag aspnetapp registry.heroku.com/simple-view-detail-reactjs-app/web
-          docker push registry.heroku.com/simple-view-detail-reactjs-app/web
+          heroku login -i -username=thangnldse62897@fpt.edu.vn --password=58b7661a-6f18-4d28-8853-096cd5da7138 registry.heroku.com 
+
       - run:
           name: Setup Heroku
           command: |
