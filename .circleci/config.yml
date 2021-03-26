@@ -61,7 +61,10 @@ jobs:
       #     command: git clone https://heroku:58b7661a-6f18-4d28-8853-096cd5da7138@git.heroku.com/simple-view-detail-reactjs-app.git main
       - run:
           name: Commit change Heroku
-          command: git commit -am "Commit change"
+          command: |
+            git config --global user.email "thangnldse62897@fpt.edu.vn"
+            git commit -am "Commit change"
+            
       - run:
           name: Deploy Master to Heroku
           command: git push https://heroku:58b7661a-6f18-4d28-8853-096cd5da7138@git.heroku.com/simple-view-detail-reactjs-app.git main
