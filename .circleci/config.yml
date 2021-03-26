@@ -106,8 +106,12 @@ workflows:
     jobs:
       # - build
       # - deploy
-      - thang
+
       - toan:
           requires:
             - long
       - long
+      - toan:
+          requires:
+            - thang
+      - thang
