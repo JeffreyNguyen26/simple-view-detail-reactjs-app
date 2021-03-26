@@ -53,9 +53,23 @@ jobs:
       #     name: Clone from Heroku
       #     command: git clone https://thangnldse62897:Th@ng26121998@git.heroku.com/simple-view-detail-reactjs-app.git
 
+      # - run:
+      #     name: Deploy Master to Heroku
+      #     command: git push https://heroku:58b7661a-6f18-4d28-8853-096cd5da7138@git.heroku.com/simple-view-detail-reactjs-app.git master
+
+      - run: |
+          docker login -username=thangnldse62897@fpt.edu.vn --password=58b7661a-6f18-4d28-8853-096cd5da7138 registry.heroku.com 
+          docker tag aspnetapp registry.heroku.com/simple-view-detail-reactjs-app/web
+          docker push registry.heroku.com/simple-view-detail-reactjs-app/web
       - run:
-          name: Deploy Master to Heroku
-          command: git push https://heroku:58b7661a-6f18-4d28-8853-096cd5da7138@git.heroku.com/simple-view-detail-reactjs-app.git master
+          name: Setup Heroku
+          command: |
+            chmod +x .circleci/setup-heroku.sh
+            .circleci/setup-heroku.sh
+      - run:
+          name: Deploy to Heroku
+          command: |
+            heroku container:release web --app $simple-view-detail-reactjs-app
 
 workflows:
   version: 2.1
