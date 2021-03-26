@@ -55,7 +55,7 @@ jobs:
               password Th@ng26121998
           EOF
       - run: chmod 600 ~/.netrc 
-      - run: heroku git:remote -a simple-view-detail-reactjs-app
+
       - run: git push heroku main:main -f
       - run: heroku run rails db:migrate --app simple-view-detail-reactjs-app
  
