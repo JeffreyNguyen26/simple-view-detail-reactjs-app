@@ -107,6 +107,7 @@ workflows:
       # - build
       # - deploy
 
+      - thang
       - toan:
           requires:
             - long
@@ -114,4 +115,3 @@ workflows:
       - toan:
           requires:
             - thang
-      - thang
