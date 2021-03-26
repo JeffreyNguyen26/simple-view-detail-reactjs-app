@@ -68,11 +68,47 @@ jobs:
             git push heroku main -f
             git pull heroku main
             git push https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
+  thang:
+    docker:
+      - image: circleci/node:12.20.2
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+  
+  long:
+    docker:
+      - image: circleci/node:12.20.2
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+  toan:
+    docker:
+      - image: circleci/node:12.20.2
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+  ka:
+    docker:
+      - image: circleci/node:12.20.2
+    working_directory: ~/repo
+
+    steps:
+      - checkout    
 
 workflows:
   version: 2.1
   workflow:
     jobs:
       # - build
-      - deploy
+      # - deploy
+      - toan:
+          requires:
+            - long
+      - long
+      - thang
 
