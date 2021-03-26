@@ -56,18 +56,13 @@ jobs:
       #     EOF
       # - run: chmod 600 ~/.netrc 
 
-      # - run:
-      #     name: Clone from Heroku
-      #     command: git clone https://heroku:58b7661a-6f18-4d28-8853-096cd5da7138@git.heroku.com/simple-view-detail-reactjs-app.git main
       - run:
-          name: Commit change Heroku
-          command: |
-            git config --global user.email "thangnldse62897@fpt.edu.vn"
-            git commit -am "Commit change"
+          name: Clone from Heroku
+          command: git clone https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
             
       - run:
           name: Deploy Master to Heroku
-          command: git push https://heroku:58b7661a-6f18-4d28-8853-096cd5da7138@git.heroku.com/simple-view-detail-reactjs-app.git main
+          command: git push https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
 
 
 workflows:
