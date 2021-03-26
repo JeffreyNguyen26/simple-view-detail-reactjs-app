@@ -45,9 +45,19 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      # - run:
-      #     name: login Heroku
-      #     command: heroku login -i
+      - run: |-
+          cat >> ~/.netrc \<<EOF
+            machine api.heroku.com
+              login thangnldse62897@fpt.edu.vn
+              password Th@ng26121998
+            machine git.heroku.com
+              login thangnldse62897@fpt.edu.vn
+              password Th@ng26121998
+          EOF
+      - run: chmod 600 ~/.netrc 
+      - run: heroku git:remote -a your_app
+      - run: git push heroku master:master -f
+      - run: heroku run rails db:migrate --app your_app
  
       # - run:
       #     name: Clone from Heroku
@@ -57,18 +67,6 @@ jobs:
       #     name: Deploy Master to Heroku
       #     command: git push https://heroku:58b7661a-6f18-4d28-8853-096cd5da7138@git.heroku.com/simple-view-detail-reactjs-app.git master
 
-      - run: |
-          heroku login -i -username=thangnldse62897@fpt.edu.vn --password=58b7661a-6f18-4d28-8853-096cd5da7138 registry.heroku.com 
-
-      - run:
-          name: Setup Heroku
-          command: |
-            chmod +x .circleci/setup-heroku.sh
-            .circleci/setup-heroku.sh
-      - run:
-          name: Deploy to Heroku
-          command: |
-            heroku container:release web --app $simple-view-detail-reactjs-app
 
 workflows:
   version: 2.1
