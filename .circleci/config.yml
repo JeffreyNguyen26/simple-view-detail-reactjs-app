@@ -39,9 +39,22 @@ jobs:
           path: build/static/
           destination: BuildResult
 
+  deploy:
+    docker:
+      - image: circleci/node:12.20.2
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:4db64f15@git.heroku.com/simple-view-detail-reactjs-app.git master
+
+
 workflows:
   version: 2.1
   workflow:
     jobs:
-      - build
+      # - build
+      - deploy
 
