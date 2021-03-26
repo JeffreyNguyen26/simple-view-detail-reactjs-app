@@ -1,14 +1,9 @@
 version: 2.1
-
-executors:
-  my-executor:
+jobs:
+  build:
     docker:
       - image: circleci/node:12.20.2
     working_directory: ~/repo
-
-jobs:
-  build:
-    executor: my-executor
 
     steps:
       - checkout
