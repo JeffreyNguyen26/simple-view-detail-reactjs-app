@@ -16,7 +16,7 @@ jobs:
           command: |
               pwd
               echo 'chothang'
-              ls -d */
+              ls */
               echo 'chothangngusi'
       # - save_cache:
       #     paths:
