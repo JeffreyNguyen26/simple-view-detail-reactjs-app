@@ -32,7 +32,7 @@ jobs:
       - store_artifacts:
           # path: build/static/
           # destination: BuildResult
-          path: ../home/circleci/.npm/_logs
+          path: ../.npm/_logs
           destination: ErrorResult
 
   deploy:
