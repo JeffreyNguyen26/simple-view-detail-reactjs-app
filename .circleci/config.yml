@@ -10,7 +10,7 @@ jobs:
 
       - run:
           name: npm install
-          command: npm install --save env-ci
+          command: npm install
       # - save_cache:
       #     paths:
       #       - node_modules
@@ -22,14 +22,10 @@ jobs:
       #       - v1-dependencies-{{ checksum "package.json" }}
       #       # fallback to using the latest cache if no exact match is found
       #       - v1-dependencies-
+
       - run:
-          name: check file
-          command: ls
-      - run:
-          name: check file in src
-          command: |
-            cd src
-            ls
+          name: run npm ci
+          command: npm ci 
 
       - run:
           name: build
