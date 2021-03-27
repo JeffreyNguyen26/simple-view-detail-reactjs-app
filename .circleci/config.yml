@@ -3,7 +3,7 @@ jobs:
   build:
     machine: true
     steps:
-      - checkout
+      # - checkout
       - run: 
           name: clean cache
           command: npm cache clean --force
@@ -31,13 +31,16 @@ jobs:
       #       - v1-dependencies-
       - run:
           name: build
-          command: npm run-script build
+          command: |
+            mkdir -p '/home/circleci/project'
+            cd '/home/circleci/project'
+            git clone --no-checkout "git@github.com:JeffreyNguyen26/simple-view-detail-reactjs-app.git" 
 
-      - store_artifacts:
-          # path: build/static/
-          # destination: BuildResult
-          path: ../.npm/_logs
-          destination: ErrorResult
+      # - store_artifacts:
+      #     # path: build/static/
+      #     # destination: BuildResult
+      #     path: ../.npm/_logs
+      #     destination: ErrorResult
 
   deploy:
     docker:
