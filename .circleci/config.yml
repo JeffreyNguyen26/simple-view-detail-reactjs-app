@@ -13,7 +13,7 @@ jobs:
             node -v
       - run:
           name: Install node@v12.20.2
-          command: ./.nvm/nvm.sh install 4.4.5
+          command: nvm install 12.20.2
       - run:
           name: Check node version
           command: |
