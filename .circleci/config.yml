@@ -1,12 +1,19 @@
 version: 2.1
 jobs:
   build:
-    docker:
-      - image: circleci/node:12.20.2
-    working_directory: ~/repo
-
+    machine: true
     steps:
       - checkout
+      - run:
+          name: Install node enviroment
+          command: |
+            ./load-nvm.sh
+            nvm install v12.20.2
+            nvm alias default v12.20.2
+      - run: |
+          ./load-nvm.sh
+          npm version
+
       - run: 
           name: clean cache
           command: npm cache clean --force
@@ -73,6 +80,6 @@ workflows:
   version: 2.1
   workflow:
     jobs:
-      # - build
-      - deploy
+      - build
+      # - deploy
 
