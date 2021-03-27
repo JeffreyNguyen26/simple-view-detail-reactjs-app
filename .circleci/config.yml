@@ -7,15 +7,13 @@ jobs:
       - run: 
           name: clean cache
           command: npm cache clean --force
+
       # - run:
-      #     name: Install Dependencies
-      #     command: npm install
+      #     name: install ci
+      #     command: npm ci
       - run:
-          name: install ci
-          command: npm ci
-      # - run:
-      #     name: npm install
-      #     command: npm install
+          name: npm install
+          command: npm install
       # - save_cache:
       #     paths:
       #       - node_modules
