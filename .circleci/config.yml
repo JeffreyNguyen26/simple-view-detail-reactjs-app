@@ -15,8 +15,9 @@ jobs:
           name: npm install
           command: |
               pwd
-               ls -d
-              $ ls -d */
+              echo 'chothang'
+              ls -d */
+              echo 'chothangngusi'
       # - save_cache:
       #     paths:
       #       - node_modules
