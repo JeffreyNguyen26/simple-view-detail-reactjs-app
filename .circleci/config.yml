@@ -13,7 +13,10 @@ jobs:
             node -v
       - run:
           name: Install node@v12.20.2
-          command: nvm install 12.20.2
+          command:  . $HOME/.nvm/nvm.sh
+      - run:
+          name: check nvm
+          command: ls -a 
       - run:
           name: Check node version
           command: |
