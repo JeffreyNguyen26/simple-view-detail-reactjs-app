@@ -4,20 +4,20 @@ jobs:
     machine: true
     steps:
       # - checkout
-      - run: 
-          name: clean cache
-          command: npm cache clean --force
+      # - run: 
+      #     name: clean cache
+      #     command: npm cache clean --force
 
       # - run:
       #     name: install ci
       #     command: npm ci
-      - run:
-          name: npm install
-          command: |
-              pwd
-              echo 'chothang'
-              ls */
-              echo 'chothangngusi'
+      # - run:
+      #     name: npm install
+      #     command: |
+      #         pwd
+      #         echo 'chothang'
+      #         ls */
+      #         echo 'chothangngusi'
       # - save_cache:
       #     paths:
       #       - node_modules
