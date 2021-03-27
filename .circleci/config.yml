@@ -33,8 +33,6 @@ jobs:
           name: build
           command: |
             
-            echo "   "
-            cd simple-view-detail-reactjs-app
             ls
             echo "      "
 
