@@ -54,16 +54,16 @@ jobs:
       image: ubuntu-1604-cuda-11.1:202012-01
     steps:
       - checkout
-      - run: |-
-          cat >> ~/.netrc \<<EOF
-            machine api.heroku.com
-              login thangnldse62897@fpt.edu.vn
-              password Th@ng26121998
-            machine git.heroku.com
-              login thangnldse62897@fpt.edu.vn
-              password Th@ng26121998
-          EOF
-      - run: chmod 600 ~/.netrc 
+      # - run: |-
+      #     cat >> ~/.netrc \<<EOF
+      #       machine api.heroku.com
+      #         login thangnldse62897@fpt.edu.vn
+      #         password Th@ng26121998
+      #       machine git.heroku.com
+      #         login thangnldse62897@fpt.edu.vn
+      #         password Th@ng26121998
+      #     EOF
+      # - run: chmod 600 ~/.netrc 
 
       # - run:
       #     name: Pull from Heroku
@@ -76,6 +76,8 @@ jobs:
             heroku create
             git push heroku main
             heroku open
+            git config --global user.email "thangnldse62897@fpt.edu.vn"
+            git config --global user.name "thangnldse62897"
             git push origin https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
 
       # - run:
