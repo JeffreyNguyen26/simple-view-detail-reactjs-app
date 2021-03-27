@@ -19,7 +19,10 @@ jobs:
             nvm alias default v12.20.2
       - run:
           name: check nvm
-          command: ls -a 
+          command: ls -a | grep .nvm
+      - run:
+          name: check nvm version
+          command: nvm --version
       - run:
           name: Check node version
           command: |
