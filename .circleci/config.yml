@@ -7,7 +7,21 @@ jobs:
       - run: 
           name: clean cache
           command: npm cache clean --force
-
+      - run:
+          name: Install  Node.js 12.20.2 with build in nvm tool
+          command: |
+            export NVM_DIR="/opt/circleci/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+            nvm install v12.20.2 && nvm use v12.20.2 && nvm alias default v12.20.2
+            node -v
+      - run:
+          name: run lastest node
+          command: |
+            export NVM_DIR="/opt/circleci/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+            nvm use v12.20.2
+            node -v
+            
       - run:
           name: npm install
           command: npm install
