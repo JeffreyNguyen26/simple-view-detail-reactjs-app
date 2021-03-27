@@ -14,6 +14,7 @@ jobs:
       - run:
           name: npm install
           command: |
+              pwd
               cd simple-view-detail-reactjs-app
               npm install
       # - save_cache:
