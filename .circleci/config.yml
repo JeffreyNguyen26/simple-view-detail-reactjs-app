@@ -13,6 +13,12 @@ jobs:
             nvm install v12.20.2 && nvm use v12.20.2 && nvm alias default v12.20.2
             node -v
       - run:
+          name: Install node@v8.11.3
+          command: |
+            ./load-nvm.sh
+            nvm install v8.11.3
+            nvm alias default v8.11.3
+      - run:
           name: Check node version
           command: |
             node -v
