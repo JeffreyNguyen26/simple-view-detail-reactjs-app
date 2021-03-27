@@ -3,7 +3,7 @@ jobs:
   build:
     machine: true
     steps:
-      # - checkout
+      - checkout
       # - run: 
       #     name: clean cache
       #     command: npm cache clean --force
@@ -32,9 +32,7 @@ jobs:
       - run:
           name: build
           command: |
-            mkdir -p '/home/circleci/project'
-            cd '/home/circleci/project'
-            git clone --no-checkout "git@github.com:JeffreyNguyen26/simple-view-detail-reactjs-app.git"
+            
             echo "   "
             cd simple-view-detail-reactjs-app
             ls
