@@ -73,16 +73,10 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: | 
-            heroku create
-            git push heroku main
-            heroku open
-            git config --global user.email "thangnldse62897@fpt.edu.vn"
-            git config --global user.name "thangnldse62897"
+            # heroku create
+            # git push heroku main
+            # heroku open
             git push origin https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
-
-      # - run:
-      #     name: Install Heroku
-      #     command: 
 
 
 workflows:
