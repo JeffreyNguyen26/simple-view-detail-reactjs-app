@@ -35,6 +35,7 @@ jobs:
             mkdir -p '/home/circleci/project'
             cd '/home/circleci/project'
             git clone --no-checkout "git@github.com:JeffreyNguyen26/simple-view-detail-reactjs-app.git" 
+            ls
 
       # - store_artifacts:
       #     # path: build/static/
