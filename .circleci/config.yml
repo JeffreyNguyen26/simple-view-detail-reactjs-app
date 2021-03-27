@@ -28,6 +28,11 @@ jobs:
       - run:
           name: check file
           command: ls
+      - run:
+          name: check file in src
+          command: |
+            cd src
+            ls
 
       - run:
           name: build
