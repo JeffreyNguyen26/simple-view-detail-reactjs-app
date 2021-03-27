@@ -15,7 +15,7 @@ jobs:
           name: npm install
           command: |
               pwd
-              cd simple-view-detail-reactjs-app
+              cd '/home/circleci/project/simple-view-detail-reactjs-app'
               npm install
       # - save_cache:
       #     paths:
