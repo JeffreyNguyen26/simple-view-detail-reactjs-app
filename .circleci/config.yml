@@ -30,8 +30,10 @@ jobs:
           command: npm run-script build
 
       - store_artifacts:
-          path: build/static/
-          destination: BuildResult
+          # path: build/static/
+          # destination: BuildResult
+          path: .npm/_logs/
+          destination: ErrorResult
 
   deploy:
     docker:
