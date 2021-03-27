@@ -50,9 +50,8 @@ jobs:
       #     destination: ErrorResult
 
   deploy:
-    docker:
-      - image: circleci/node:12.20.2
-    working_directory: ~/repo
+    machine:   
+      image: ubuntu-1604-cuda-11.1:202012-01
     steps:
       - checkout
       # - run: |-
@@ -79,10 +78,15 @@ jobs:
             heroku open
             git push origin https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
 
+      # - run:
+      #     name: Install Heroku
+      #     command: 
+
+
 workflows:
   version: 2.1
   workflow:
     jobs:
-      - build
-      # - deploy
+      # - build
+      - deploy
 
