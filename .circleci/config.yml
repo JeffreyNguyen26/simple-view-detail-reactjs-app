@@ -20,7 +20,11 @@ jobs:
 
       - run:
           name: check nvm version
-          command: nvm --version
+          command: |
+            export NVM_DIR="/opt/circleci/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+            nvm --version
+
       - run:
           name: Check node version
           command: |
