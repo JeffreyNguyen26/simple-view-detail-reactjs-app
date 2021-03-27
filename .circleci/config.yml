@@ -11,13 +11,9 @@ jobs:
       # - run:
       #     name: install ci
       #     command: npm ci
-      # - run:
-      #     name: npm install
-      #     command: |
-      #         pwd
-      #         echo 'chothang'
-      #         ls */
-      #         echo 'chothangngusi'
+      - run:
+          name: npm install
+          command: npm install
       # - save_cache:
       #     paths:
       #       - node_modules
@@ -31,13 +27,11 @@ jobs:
       #       - v1-dependencies-
       - run:
           name: build
-          command: |
-            ls
-            echo "      "
+          command: npm run-script build
 
-      # - store_artifacts:
-      #     # path: build/static/
-      #     # destination: BuildResult
+      - store_artifacts:
+          path: build/static/
+          destination: BuildResult
       #     path: ../.npm/_logs
       #     destination: ErrorResult
 
