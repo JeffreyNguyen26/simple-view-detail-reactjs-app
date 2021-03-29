@@ -123,14 +123,10 @@ jobs:
       # - run:  
       #     name: commit code
       #     command: git commit -m "new push"
-      
-      - run:
-          name: git checkout
-          command: git checkout -b main
 
       - run:  
           name: git delete branch 
-          command: git branch -D master
+          command: git branch -D main
 
       - run:
           name: Deploy Master to Heroku
