@@ -40,9 +40,7 @@ export default class Customers extends Component {
               <p>{customer.email}</p>
               <p>{customer.phone}</p>
               <Button bsStyle="info" onClick={() => this.setState({selectedCustomer: customer.id})}>
-
                 Click to View Details
-
               </Button>
 
             </Panel.Body>
