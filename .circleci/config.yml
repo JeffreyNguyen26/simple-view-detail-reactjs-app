@@ -122,7 +122,7 @@ jobs:
 
       - run:  
           name: commit code
-          command: git commit 
+          command: git commit -am 
 
 
       - run:
