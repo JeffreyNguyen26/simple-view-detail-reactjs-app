@@ -82,15 +82,16 @@ jobs:
       - run: 
           name: Read file setup-heroku.sh
           command: bash .circleci/setup-heroku.sh
+      - run: 
+          name: Fetch main
+          command: git fetch simple-view-detail-reactjs-app
       - run:
           name: Deploy Master to Heroku
           # command: |
           #   if [ "new_branch" == "main" ]; then
           #     git push --force git@heroku.com:simple-view-detail-reactjs-app.git HEAD:refs/heads/circleci-project-setup
           #   fi CIRCLE_BRANCH=circleci-project-setup
-          command: |
-            git fetch main
-            git push https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git simple-view-detail-reactjs-app 
+          command: git push https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
           
   
 
