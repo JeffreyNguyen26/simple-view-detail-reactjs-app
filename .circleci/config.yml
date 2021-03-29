@@ -56,7 +56,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - AAAAB3NzaC1yc2EAAAADAQABAAABAQDEx8IN9tP2QpiYYPUGYw555MF6OjpPDsUvP3RZz+bR9gUVH6mgMsJDmv/CiNUADWcI8mz22ixhOGnDhKAoT+SBGIbjnqUL8tx7VEzRvKRL8S1tqEZmqCpoQeVrr7kNVM0c2l7/fmeNKuSeRTnYPBcIZbCsJeipUsuxF49QsDXvPS8BlNdA5WbhAd9scWD042k5Sr2rQ+nvXjzlgFDG/URr1zn3Zfy36zlK0FEG+TACsYhWELVY2g2t9JF7+ha7O0jstr0K//uTrQMn0q4QbcNqMTmLI/tjtQjAiVTltF/Yh0fy9RYeCz3Cayw+8IBs+R20OwY1XXeaWwC3Ov1Zd79j
+            - 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDEx8IN9tP2QpiYYPUGYw555MF6OjpPDsUvP3RZz+bR9gUVH6mgMsJDmv/CiNUADWcI8mz22ixhOGnDhKAoT+SBGIbjnqUL8tx7VEzRvKRL8S1tqEZmqCpoQeVrr7kNVM0c2l7/fmeNKuSeRTnYPBcIZbCsJeipUsuxF49QsDXvPS8BlNdA5WbhAd9scWD042k5Sr2rQ+nvXjzlgFDG/URr1zn3Zfy36zlK0FEG+TACsYhWELVY2g2t9JF7+ha7O0jstr0K//uTrQMn0q4QbcNqMTmLI/tjtQjAiVTltF/Yh0fy9RYeCz3Cayw+8IBs+R20OwY1XXeaWwC3Ov1Zd79j'
       # - run: |-
       #     cat >> ~/.netrc \<<EOF
       #       machine api.heroku.com
@@ -84,9 +84,13 @@ jobs:
           command: bash .circleci/setup-heroku.sh
       - run:
           name: Deploy Master to Heroku
+          # command: |
+          #   if [ "new_branch" == "main" ]; then
+          #     git push --force git@heroku.com:simple-view-detail-reactjs-app.git HEAD:refs/heads/master
+          #   fi
           command: |
             if [ "new_branch" == "main" ]; then
-              git push --force git@heroku.com:simple-view-detail-reactjs-app.git HEAD:refs/heads/master
+              git push --force origin https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
             fi
   
 
