@@ -84,7 +84,7 @@ jobs:
           command: bash .circleci/setup-heroku.sh
       - run: 
           name: Fetch main
-          command: git fetch origin simple-view-detail-reactjs-app
+          command: git fetch origin circleci-project-setup
       - run:
           name: Deploy Master to Heroku
           # command: |
