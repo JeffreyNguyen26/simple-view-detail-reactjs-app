@@ -100,6 +100,9 @@ jobs:
       # - run:
       #     name: remote remove url
       #     command: git remote rm heroku  
+      - run:  
+          name: git delete branch 
+          command: git branch -D main
       - run: 
           name: git remote set-url 
           # command: git remote set-url heroku https://git.heroku.com/simple-view-detail-reactjs-app.git git@heroku.com:simple-view-detail-reactjs-app.git
@@ -123,9 +126,6 @@ jobs:
       # - run:  
       #     name: commit code
       #     command: git commit -m "new push"
-      - run:  
-          name: git delete branch 
-          command: git branch -D main
 
       - run:
           name: Deploy Master to Heroku
