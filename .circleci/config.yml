@@ -89,8 +89,8 @@ jobs:
           name: git remote rm origin
           command: git remote rm origin
       - run: 
-          name: git remote set-url origin git@github.com:ppreyer/first_app.git
-          command: git remote set-url origin git@github.com:ppreyer/first_app.git
+          name: git remote set-url 
+          command: git remote set-url origin git@github.com:JeffreyNguyen26/simple-view-detail-reactjs-app.git
       - run:
           name: Deploy Master to Heroku
           # command: |
