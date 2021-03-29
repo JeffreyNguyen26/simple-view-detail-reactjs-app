@@ -87,10 +87,10 @@ jobs:
           # command: |
           #   if [ "new_branch" == "main" ]; then
           #     git push --force git@heroku.com:simple-view-detail-reactjs-app.git HEAD:refs/heads/master
-          #   fi
+          #   fi CIRCLE_BRANCH=circleci-project-setup
           command: |
-            if [ "new_branch" == "main" ]; then
-              git push --force origin https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
+            if [ "${CIRCLE_BRANCH}" == "circleci-project-setup" ]; then
+              git push --force git@heroku.com:simple-view-detail-reactjs-app.git HEAD:refs/heads/main
             fi
   
 
