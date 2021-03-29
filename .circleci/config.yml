@@ -115,8 +115,8 @@ jobs:
               # git pull origin main  git remote set-url origin git@github.com:ppreyer/first_app.git git remote add origin git@github.com:JeffreyNguyen26/simple-view-detail-reactjs-app.git
           # command: git push -u https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
           command: |
-            git fetch origin main
-            git merge origin main
+            git fetch heroku main
+            git merge heroku main
             git push heroku main 
 
 workflows:
