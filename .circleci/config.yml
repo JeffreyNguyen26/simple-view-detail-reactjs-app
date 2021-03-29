@@ -88,6 +88,9 @@ jobs:
       # - run: 
       #     name: heroku restart
       #     command: heroku restart --app simple-view-detail-reactjs-app
+      - run:
+          name: add SSH key
+          command: heroku keys:add
       - run: 
           name: git remote
           command: git remote -v
