@@ -86,11 +86,11 @@ jobs:
           name: Deploy Master to Heroku
           # command: |
           #   if [ "new_branch" == "main" ]; then
-          #     git push --force git@heroku.com:simple-view-detail-reactjs-app.git HEAD:refs/heads/master
+          #     git push --force git@heroku.com:simple-view-detail-reactjs-app.git HEAD:refs/heads/circleci-project-setup
           #   fi CIRCLE_BRANCH=circleci-project-setup
           command: |
-            if [ "${CIRCLE_BRANCH}" == "circleci-project-setup" ]; then
-              git push --force git@heroku.com:simple-view-detail-reactjs-app.git HEAD:refs/heads/circleci-project-setup
+            if [ "CIRCLE_BRANCH" == "circleci-project-setup" ]; then
+              git push --force git@heroku.com:simple-view-detail-reactjs-app.git 
             fi
   
 
