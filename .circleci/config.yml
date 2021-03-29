@@ -88,9 +88,9 @@ jobs:
       # - run: 
       #     name: heroku restart
       #     command: heroku restart --app simple-view-detail-reactjs-app
-      - run:
-          name: add SSH key
-          command: heroku keys:add
+      # - run:
+      #     name: add SSH key
+      #     command: heroku keys:add
       - run: 
           name: git remote
           command: git remote -v
@@ -101,8 +101,8 @@ jobs:
           name: remote remove url
           command: git remote rm heroku  
       - run: 
-          name: git remote add
-          # command: git remote set-url heroku git@heroku.com:simple-view-detail-reactjs-app.git https://git.heroku.com/simple-view-detail-reactjs-app.git
+          name: git remote set-url 
+          # command: git remote set-url heroku https://git.heroku.com/simple-view-detail-reactjs-app.git git@heroku.com:simple-view-detail-reactjs-app.git
           command: git remote add heroku https://git.heroku.com/simple-view-detail-reactjs-app.git
       - run:
           name: Deploy Master to Heroku
