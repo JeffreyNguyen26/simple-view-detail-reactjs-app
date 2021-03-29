@@ -97,9 +97,9 @@ jobs:
       # - run: 
       #     name: git remote rm heroku
       #     command: git remote rm heroku
-      - run:
-          name: remote remove url
-          command: git remote rm heroku  
+      # - run:
+      #     name: remote remove url
+      #     command: git remote rm heroku  
       - run: 
           name: git remote set-url 
           # command: git remote set-url heroku https://git.heroku.com/simple-view-detail-reactjs-app.git git@heroku.com:simple-view-detail-reactjs-app.git
