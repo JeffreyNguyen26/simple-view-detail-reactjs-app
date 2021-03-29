@@ -118,7 +118,12 @@ jobs:
             
       - run:
           name: merge code
-          command: git merge main
+          command: git add .
+
+      - run:  
+          name: commit code
+          command: git commit 
+
 
       - run:
           name: Deploy Master to Heroku
