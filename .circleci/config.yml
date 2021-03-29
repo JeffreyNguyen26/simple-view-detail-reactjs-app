@@ -84,7 +84,10 @@ jobs:
           command: bash .circleci/setup-heroku.sh
       - run:
           name: Deploy Master to Heroku
-          command: git push origin https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
+          command: |
+            if [ "new_branch" == "main" ]; then
+              git push --force git@heroku.com:simple-view-detail-reactjs-app.git HEAD:refs/heads/master
+            fi
   
 
 
