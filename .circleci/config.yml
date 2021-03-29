@@ -98,7 +98,7 @@ jobs:
       - run: 
           name: git remote set-url 
           # command: git remote set-url heroku https://git.heroku.com/simple-view-detail-reactjs-app.git
-          command: git remote add heroku git@heroku.com:simple-view-detail-reactjs-app.git
+          command: git remote set-url heroku git@heroku.com:simple-view-detail-reactjs-app.git
       - run:
           name: Deploy Master to Heroku
           # command: |
