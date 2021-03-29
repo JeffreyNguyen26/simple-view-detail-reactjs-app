@@ -85,15 +85,15 @@ jobs:
       # - run: 
       #     name: Fetch main
       #     command: git fetch origin main
-      - run: 
-          name: heroku restart
-          command: heroku restart --app simple-view-detail-reactjs-app
+      # - run: 
+      #     name: heroku restart
+      #     command: heroku restart --app simple-view-detail-reactjs-app
       - run: 
           name: git remote
           command: git remote -v
-      - run: 
-          name: git remote rm heroku
-          command: git remote rm heroku
+      # - run: 
+      #     name: git remote rm heroku
+      #     command: git remote rm heroku
           
       - run: 
           name: git remote set-url 
