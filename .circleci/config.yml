@@ -89,9 +89,6 @@ jobs:
           name: git remote rm origin
           command: git remote rm origin
       - run: 
-          name: git remote remove origin
-          command: git remote remove origin
-      - run: 
           name: git remote set-url origin git@github.com:ppreyer/first_app.git
           command: git remote set-url origin git@github.com:ppreyer/first_app.git
       - run:
