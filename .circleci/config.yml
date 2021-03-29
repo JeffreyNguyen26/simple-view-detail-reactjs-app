@@ -91,12 +91,13 @@ jobs:
           # command: |
           #   if [ "new_branch" == "main" ]; then
           #     git push --force git@heroku.com:simple-view-detail-reactjs-app.git HEAD:refs/heads/circleci-project-setup
-          #   fi CIRCLE_BRANCH=circleci-project-setup
+          #   fi CIRCLE_BRANCH=circleci-project-setup git push https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
           command: |
               git config --global user.email "jeffrey.nguyen98@gmail.com"
               git config --global user.name "JeffreyNguyen26"
-              git pull --rebase origin main
-              git push https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
+              git remote add origin https://github.com/JeffreyNguyen26/simple-view-detail-reactjs-app.git
+              git pull origin main
+              git push -u https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
           
   
 
