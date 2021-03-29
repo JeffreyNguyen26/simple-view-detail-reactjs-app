@@ -79,9 +79,9 @@ jobs:
             # heroku create
             # git push heroku main
             # heroku open
-      - run: 
-          name: Read file setup-heroku.sh
-          command: bash .circleci/setup-heroku.sh
+      # - run: 
+      #     name: Read file setup-heroku.sh
+      #     command: bash .circleci/setup-heroku.sh
       - run: 
           name: Fetch main
           command: git fetch origin main
@@ -96,6 +96,7 @@ jobs:
               git config --global user.email "thangnldse62897@fpt.edu.vn"
               git config --global user.name "thangnldse62897"
               git pull origin main
+              git commit
               git push https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
           
   
