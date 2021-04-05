@@ -54,9 +54,9 @@ jobs:
       image: ubuntu-1604-cuda-11.1:202012-01
     steps:
       - checkout
-      - add_ssh_keys:
-          fingerprints:
-            - 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDEx8IN9tP2QpiYYPUGYw555MF6OjpPDsUvP3RZz+bR9gUVH6mgMsJDmv/CiNUADWcI8mz22ixhOGnDhKAoT+SBGIbjnqUL8tx7VEzRvKRL8S1tqEZmqCpoQeVrr7kNVM0c2l7/fmeNKuSeRTnYPBcIZbCsJeipUsuxF49QsDXvPS8BlNdA5WbhAd9scWD042k5Sr2rQ+nvXjzlgFDG/URr1zn3Zfy36zlK0FEG+TACsYhWELVY2g2t9JF7+ha7O0jstr0K//uTrQMn0q4QbcNqMTmLI/tjtQjAiVTltF/Yh0fy9RYeCz3Cayw+8IBs+R20OwY1XXeaWwC3Ov1Zd79j'
+      # - add_ssh_keys:
+      #     fingerprints:
+      #       - 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDEx8IN9tP2QpiYYPUGYw555MF6OjpPDsUvP3RZz+bR9gUVH6mgMsJDmv/CiNUADWcI8mz22ixhOGnDhKAoT+SBGIbjnqUL8tx7VEzRvKRL8S1tqEZmqCpoQeVrr7kNVM0c2l7/fmeNKuSeRTnYPBcIZbCsJeipUsuxF49QsDXvPS8BlNdA5WbhAd9scWD042k5Sr2rQ+nvXjzlgFDG/URr1zn3Zfy36zlK0FEG+TACsYhWELVY2g2t9JF7+ha7O0jstr0K//uTrQMn0q4QbcNqMTmLI/tjtQjAiVTltF/Yh0fy9RYeCz3Cayw+8IBs+R20OwY1XXeaWwC3Ov1Zd79j'
       # - run: |-
       #     cat >> ~/.netrc \<<EOF
       #       machine api.heroku.com
@@ -79,9 +79,9 @@ jobs:
             # heroku create
             # git push heroku main
             # heroku open
-      - run: 
-          name: Read file setup-heroku.sh
-          command: bash .circleci/setup-heroku.sh
+      # - run: 
+      #     name: Read file setup-heroku.sh
+      #     command: bash .circleci/setup-heroku.sh
       # - run: 
       #     name: Fetch main
       #     command: git fetch origin main
@@ -135,6 +135,6 @@ workflows:
   version: 2.1
   workflow:
     jobs:
-    - build
-      # - deploy
+    # - build
+      - deploy
 
