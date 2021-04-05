@@ -79,16 +79,27 @@ jobs:
             # heroku create
             # git push heroku main
             # heroku open
+      # - run: 
+      #     name: Read file setup-heroku.sh
+      #     command: |
+      #         cat  \<<-EOF >> ~/.netrc
+      #         machine api.heroku.com
+      #         login thangnldse62897@fpt.edu.vn
+      #         password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
+      #         machine git.heroku.com
+      #         login thangnldse62897@fpt.edu.vn
+      #         password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
+      #         EOF
       - run: 
           name: Read file setup-heroku.sh
           command: |
               cat  \<<-EOF >> ~/.netrc
               machine api.heroku.com
-              login thangnldse62897@fpt.edu.vn
-              password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
+              login phan.tuan2016a1@gmail.com
+              password 7a40aa2b-8a54-48cc-80cc-d50840d452c1
               machine git.heroku.com
-              login thangnldse62897@fpt.edu.vn
-              password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
+              login phan.tuan2016a1@gmail.com
+              password 7a40aa2b-8a54-48cc-80cc-d50840d452c1
               EOF
       # - run: 
       #     name: Fetch main
@@ -135,9 +146,9 @@ jobs:
       #     name: commit code
       #     command: git commit -m "new push"
 
-      # - run:
-      #     name: Deploy Master to Heroku
-      #     command: git push -f heroku HEAD:main
+      - run:
+          name: Deploy Master to Heroku
+          command: git push -f heroku HEAD:main
           
 workflows:
   version: 2.1
