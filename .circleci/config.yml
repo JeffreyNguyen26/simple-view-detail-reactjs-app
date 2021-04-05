@@ -57,16 +57,6 @@ jobs:
       # - add_ssh_keys:
       #     fingerprints:
       #       - 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDEx8IN9tP2QpiYYPUGYw555MF6OjpPDsUvP3RZz+bR9gUVH6mgMsJDmv/CiNUADWcI8mz22ixhOGnDhKAoT+SBGIbjnqUL8tx7VEzRvKRL8S1tqEZmqCpoQeVrr7kNVM0c2l7/fmeNKuSeRTnYPBcIZbCsJeipUsuxF49QsDXvPS8BlNdA5WbhAd9scWD042k5Sr2rQ+nvXjzlgFDG/URr1zn3Zfy36zlK0FEG+TACsYhWELVY2g2t9JF7+ha7O0jstr0K//uTrQMn0q4QbcNqMTmLI/tjtQjAiVTltF/Yh0fy9RYeCz3Cayw+8IBs+R20OwY1XXeaWwC3Ov1Zd79j'
-      # - run: |-
-      #     cat >> ~/.netrc \<<EOF
-      #       machine api.heroku.com
-      #         login thangnldse62897@fpt.edu.vn
-      #         password Th@ng26121998
-      #       machine git.heroku.com
-      #         login thangnldse62897@fpt.edu.vn
-      #         password Th@ng26121998
-      #     EOF
-      # - run: chmod 600 ~/.netrc 
 
       # - run:
       #     name: Pull from Heroku
@@ -79,27 +69,16 @@ jobs:
             # heroku create
             # git push heroku main
             # heroku open
-      # - run: 
-      #     name: Read file setup-heroku.sh
-      #     command: |
-      #         cat  \<<-EOF >> ~/.netrc
-      #         machine api.heroku.com
-      #         login thangnldse62897@fpt.edu.vn
-      #         password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
-      #         machine git.heroku.com
-      #         login thangnldse62897@fpt.edu.vn
-      #         password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
-      #         EOF
       - run: 
           name: Read file setup-heroku.sh
           command: |
               cat  \<<-EOF >> ~/.netrc
               machine api.heroku.com
-              login phan.tuan2016a1@gmail.com
-              password 7a40aa2b-8a54-48cc-80cc-d50840d452c1
+              login thangnldse62897@fpt.edu.vn
+              password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
               machine git.heroku.com
-              login phan.tuan2016a1@gmail.com
-              password 7a40aa2b-8a54-48cc-80cc-d50840d452c1
+              login thangnldse62897@fpt.edu.vn
+              password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
               EOF
       # - run: 
       #     name: Fetch main
@@ -119,9 +98,9 @@ jobs:
       # - run:
       #     name: remote remove url
       #     command: git remote rm heroku  
-      # - run:  
-      #     name: git delete branch 
-      #     command: git branch -D main
+      - run:  
+          name: git delete branch 
+          command: git branch -D main
       # - run: 
       #     name: git remote set-url 
           # command: git remote set-url heroku https://git.heroku.com/simple-view-detail-reactjs-app.git git@heroku.com:simple-view-detail-reactjs-app.git
@@ -138,13 +117,13 @@ jobs:
           # command: git push -u https://heroku:a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae@git.heroku.com/simple-view-detail-reactjs-app.git main
           # command: git fetch heroku main
             
-      # - run:
-      #     name: merge code
-      #     command: git add .
+      - run:
+          name: merge code
+          command: git add .
 
-      # - run:  
-      #     name: commit code
-      #     command: git commit -m "new push"
+      - run:  
+          name: commit code
+          command: git commit -m "new push"
 
       - run:
           name: Deploy Master to Heroku
