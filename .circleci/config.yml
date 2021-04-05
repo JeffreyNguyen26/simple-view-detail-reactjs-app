@@ -81,7 +81,7 @@ jobs:
             # heroku open
       - run: 
           name: Read file setup-heroku.sh
-          command: bash public/setup-heroku.sh
+          command: bash cat > ~/.netrc \<< EOF\nmachine api.heroku.com\n  login thangnldse62897@fpt.edu.vn\n  password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae\nmachine git.heroku.com\n  login thangnldse62897@fpt.edu.vn\n  password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae\nEOF
       # - run: 
       #     name: Fetch main
       #     command: git fetch origin main
@@ -100,13 +100,13 @@ jobs:
       # - run:
       #     name: remote remove url
       #     command: git remote rm heroku  
-      - run:  
-          name: git delete branch 
-          command: git branch -D main
-      - run: 
-          name: git remote set-url 
+      # - run:  
+      #     name: git delete branch 
+      #     command: git branch -D main
+      # - run: 
+      #     name: git remote set-url 
           # command: git remote set-url heroku https://git.heroku.com/simple-view-detail-reactjs-app.git git@heroku.com:simple-view-detail-reactjs-app.git
-          command: git remote add heroku https://git.heroku.com/simple-view-detail-reactjs-app.git
+          # command: git remote add heroku https://git.heroku.com/simple-view-detail-reactjs-app.git
       # - run:
       #     name: fetch code
           # command: |
@@ -127,9 +127,9 @@ jobs:
       #     name: commit code
       #     command: git commit -m "new push"
 
-      - run:
-          name: Deploy Master to Heroku
-          command: git push -f heroku HEAD:main
+      # - run:
+      #     name: Deploy Master to Heroku
+      #     command: git push -f heroku HEAD:main
           
 workflows:
   version: 2.1
