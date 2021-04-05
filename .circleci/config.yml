@@ -81,14 +81,14 @@ jobs:
             # heroku open
       - run: 
           name: Read file setup-heroku.sh
-          command: cat \<<-EOF >> ~/.netrc
-              machine api.heroku.com
-                login thangnldse62897@fpt.edu.vn
-                password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
-              machine git.heroku.com
-                login thangnldse62897@fpt.edu.vn
-                password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
-              EOF
+          command:    cat \<<-EOF >> ~/.netrc
+                  machine api.heroku.com
+                  login thangnldse62897@fpt.edu.vn
+                  password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
+                  machine git.heroku.com
+                  login thangnldse62897@fpt.edu.vn
+                  password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
+                  EOF
       # - run: 
       #     name: Fetch main
       #     command: git fetch origin main
