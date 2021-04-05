@@ -81,7 +81,7 @@ jobs:
             # heroku open
       - run: 
           name: Read file setup-heroku.sh
-          command: bash .circleci/setup-heroku.sh
+          command: bash public/setup-heroku.sh
       # - run: 
       #     name: Fetch main
       #     command: git fetch origin main
