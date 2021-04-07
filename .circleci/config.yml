@@ -152,31 +152,31 @@ jobs:
       ###################################################################################################
       - run:
           name: Get into project code
-          command: cd .
+          command: heroku git:clone -a git@github.com:JeffreyNguyen26/simple-view-detail-reactjs-app.git
 
-      - run:
-          name: Initialized empty Git repository in git
-          command: git init
+    #   - run:
+    #       name: Initialized empty Git repository in git
+    #       command: git init
 
-      - run:
-          name: add commit
-          command: git add .
+    #   - run:
+    #       name: add commit
+    #       command: git add .
 
-      - run:
-          name: commit
-          command: git commit -m "My first commit"
+    #   - run:
+    #       name: commit
+    #       command: git commit -m "My first commit"
 
-      - run:
-          name: heroku create
-          command: heroku create
+    #   - run:
+    #       name: heroku create
+    #       command: heroku create
 
-      - run:
-          name: git remote 
-          command: git remote -v
+    #   - run:
+    #       name: git remote 
+    #       command: git remote -v
 
-      - run:
-          name: heroku push
-          command: git push heroku main
+    #   - run:
+    #       name: heroku push
+    #       command: git push heroku main
 
 workflows:
   version: 2.1
