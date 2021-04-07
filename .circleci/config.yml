@@ -155,7 +155,7 @@ jobs:
           command: cd .
 
       - run:
-          name: Initialized empty Git repository in .git/
+          name: Initialized empty Git repository in git
           command: git init
 
       - run:
