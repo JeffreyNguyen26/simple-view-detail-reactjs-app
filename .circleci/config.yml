@@ -152,7 +152,7 @@ jobs:
       ###################################################################################################
       - run:
           name: Get into project code
-          command: --option
+          command: -option
 
           
 workflows:
