@@ -151,8 +151,8 @@ jobs:
 
       ###################################################################################################
       - run:
-          name: Get into project code
-          command: heroku git:clone -a git@github.com:JeffreyNguyen26/simple-view-detail-reactjs-app.git
+          name: Clone code
+          command: heroku git:clone -a https://github.com/JeffreyNguyen26/simple-view-detail-reactjs-app.git
 
     #   - run:
     #       name: Initialized empty Git repository in git
