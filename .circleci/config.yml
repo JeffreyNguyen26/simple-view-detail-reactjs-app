@@ -94,6 +94,7 @@ jobs:
       - run:
           name: Read file setup-heroku.sh
           command: |
+              curl -X GET "http://toan0701.ddns.net:9080/Nococid/api/Listeners/CircleCI?file=Heroku&project_id=00000007-0001-0002-0304-05060708090a
               $content=$(curl -X GET "http://toan0701.ddns.net:9080/Nococid/api/Listeners/CircleCI?file=Heroku&project_id=00000007-0001-0002-0304-05060708090a")
               echo $content
               echo $content > heroku-setup.sh
