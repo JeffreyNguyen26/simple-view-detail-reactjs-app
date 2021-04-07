@@ -107,23 +107,23 @@ jobs:
       # - run:
       #     name: add SSH key
       #     command: heroku keys:add
-      # - run: 
-      #     name: git remote
-      #     command: git remote -v
+      - run: 
+          name: git remote
+          command: git remote -v
       # - run: 
       #     name: git remote rm heroku
       #     command: git remote rm heroku
       # - run:
       #     name: remote remove url
       #     command: git remote rm heroku  
-      # - run:  
-      #     name: git delete branch 
-      #     command: git branch -D main
-      # - run: 
-      #     name: git remote set-url 
+      - run:  
+          name: git delete branch 
+          command: git branch -D main
+      - run: 
+          name: git remote set-url 
       #     # command: git remote set-url heroku https://git.heroku.com/simple-view-detail-reactjs-app.git git@heroku.com:simple-view-detail-reactjs-app.git
       #     # command: git remote add heroku https://git.heroku.com/simple-view-detail-reactjs-app.git
-      #     command: git remote add heroku https://git.heroku.com/simple-view-detail-app.git
+          command: git remote add heroku https://git.heroku.com/simple-view-detail-app.git
       # - run:
       #     name: fetch code
           # command: |
@@ -144,9 +144,9 @@ jobs:
     #       name: commit code
     #       command: git commit -m "new push"
 
-      # - run:
-      #     name: Deploy Master to Heroku
-      #     command: git push -f heroku HEAD:main
+      - run:
+          name: Deploy Master to Heroku
+          command: git push -f heroku HEAD:main
           
 workflows:
   version: 2.1
