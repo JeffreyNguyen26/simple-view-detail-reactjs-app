@@ -107,9 +107,9 @@ jobs:
       # - run:
       #     name: add SSH key
       #     command: heroku keys:add
-      - run: 
-          name: git remote
-          command: git remote -v
+      # - run: 
+      #     name: git remote
+      #     command: git remote -v
       # - run: 
       #     name: git remote rm heroku
       #     command: git remote rm heroku
