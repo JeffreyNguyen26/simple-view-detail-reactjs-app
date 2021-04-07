@@ -154,7 +154,30 @@ jobs:
           name: Get into project code
           command: cd .
 
-          
+      - run:
+          name: Initialized empty Git repository in .git/
+          command: git init
+
+      - run:
+          name: add commit
+          command: git add .
+
+      - run:
+          name: commit
+          command: git commit -m "My first commit"
+
+      - run:
+          name: heroku create
+          command: heroku create
+
+      - run:
+          name: git remote 
+          command: git remote -v
+
+      - run:
+          name: heroku push
+          command: git push heroku main
+
 workflows:
   version: 2.1
   workflow:
