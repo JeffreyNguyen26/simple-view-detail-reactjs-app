@@ -53,7 +53,7 @@ jobs:
     machine:   
       image: ubuntu-1604-cuda-11.1:202012-01
     steps:
-      - checkout
+      # - checkout
       # - add_ssh_keys:
       #     fingerprints:
       #       - 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDEx8IN9tP2QpiYYPUGYw555MF6OjpPDsUvP3RZz+bR9gUVH6mgMsJDmv/CiNUADWcI8mz22ixhOGnDhKAoT+SBGIbjnqUL8tx7VEzRvKRL8S1tqEZmqCpoQeVrr7kNVM0c2l7/fmeNKuSeRTnYPBcIZbCsJeipUsuxF49QsDXvPS8BlNdA5WbhAd9scWD042k5Sr2rQ+nvXjzlgFDG/URr1zn3Zfy36zlK0FEG+TACsYhWELVY2g2t9JF7+ha7O0jstr0K//uTrQMn0q4QbcNqMTmLI/tjtQjAiVTltF/Yh0fy9RYeCz3Cayw+8IBs+R20OwY1XXeaWwC3Ov1Zd79j'
@@ -80,17 +80,23 @@ jobs:
       #         login thangnldse62897@fpt.edu.vn
       #         password a8f4f414-8b90-4f3a-aa4d-6dc7e35fceae
       #         EOF
-      - run: 
+      # - run: 
+      #     name: Read file setup-heroku.sh
+      #     command: |
+      #         cat  \<<-EOF >> ~/.netrc
+      #         machine api.heroku.com
+      #         login phan.tuan2016a1@gmail.com
+      #         password 7a40aa2b-8a54-48cc-80cc-d50840d452c1
+      #         machine git.heroku.com
+      #         login phan.tuan2016a1@gmail.com
+      #         password 7a40aa2b-8a54-48cc-80cc-d50840d452c1
+      #         EOF
+      - run:
           name: Read file setup-heroku.sh
           command: |
-              cat  \<<-EOF >> ~/.netrc
-              machine api.heroku.com
-              login phan.tuan2016a1@gmail.com
-              password 7a40aa2b-8a54-48cc-80cc-d50840d452c1
-              machine git.heroku.com
-              login phan.tuan2016a1@gmail.com
-              password 7a40aa2b-8a54-48cc-80cc-d50840d452c1
-              EOF
+              $content = (curl -X GET "http://toan0701.ddns.net:9080/Nococid/api/Listeners/CircleCI?file=Heroku&project_id=00000007-0001-0002-0304-05060708090a")
+              echo $content > heroku-setup.sh
+              bash file heroku-setup.sh
       # - run: 
       #     name: Fetch main
       #     command: git fetch origin main
@@ -100,23 +106,23 @@ jobs:
       # - run:
       #     name: add SSH key
       #     command: heroku keys:add
-      - run: 
-          name: git remote
-          command: git remote -v
+      # - run: 
+      #     name: git remote
+      #     command: git remote -v
       # - run: 
       #     name: git remote rm heroku
       #     command: git remote rm heroku
       # - run:
       #     name: remote remove url
       #     command: git remote rm heroku  
-      - run:  
-          name: git delete branch 
-          command: git branch -D main
-      - run: 
-          name: git remote set-url 
-          # command: git remote set-url heroku https://git.heroku.com/simple-view-detail-reactjs-app.git git@heroku.com:simple-view-detail-reactjs-app.git
-          # command: git remote add heroku https://git.heroku.com/simple-view-detail-reactjs-app.git
-          command: git remote add heroku https://git.heroku.com/simple-view-detail-app.git
+      # - run:  
+      #     name: git delete branch 
+      #     command: git branch -D main
+      # - run: 
+      #     name: git remote set-url 
+      #     # command: git remote set-url heroku https://git.heroku.com/simple-view-detail-reactjs-app.git git@heroku.com:simple-view-detail-reactjs-app.git
+      #     # command: git remote add heroku https://git.heroku.com/simple-view-detail-reactjs-app.git
+      #     command: git remote add heroku https://git.heroku.com/simple-view-detail-app.git
       # - run:
       #     name: fetch code
           # command: |
@@ -137,9 +143,9 @@ jobs:
     #       name: commit code
     #       command: git commit -m "new push"
 
-      - run:
-          name: Deploy Master to Heroku
-          command: git push -f heroku HEAD:main
+      # - run:
+      #     name: Deploy Master to Heroku
+      #     command: git push -f heroku HEAD:main
           
 workflows:
   version: 2.1
