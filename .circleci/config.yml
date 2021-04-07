@@ -123,8 +123,8 @@ jobs:
       - run: 
           name: git remote set-url 
       #     # command: git remote set-url heroku https://git.heroku.com/simple-view-detail-reactjs-app.git git@heroku.com:simple-view-detail-reactjs-app.git
-      #     # command: git remote add heroku https://git.heroku.com/simple-view-detail-reactjs-app.git
-          command: git remote add heroku https://git.heroku.com/simple-view-detail-app.git
+          command: git remote add heroku https://git.heroku.com/simple-view-detail-reactjs-app.git
+          # command: git remote add heroku https://git.heroku.com/simple-view-detail-app.git
       # - run:
       #     name: fetch code
           # command: |
